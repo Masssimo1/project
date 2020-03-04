@@ -21,6 +21,7 @@
         <browserName>CHROME</browserName>
         <default.suiteXmlFile>src/test/resources/defaultSuite.xml</default.suiteXmlFile>
         <surfire.version>3.0.0-M4</surfire.version>
+        <aspectj.version>1.9.5</aspectj.version>
 
     </properties>
 
@@ -74,7 +75,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
-    </dependencies>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+        </dependencies>
     <build>
         <plugins>
             <plugin>
