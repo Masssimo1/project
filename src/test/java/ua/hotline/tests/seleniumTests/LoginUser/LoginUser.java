@@ -1,11 +1,11 @@
-package ua.hotline.tests.LoginUser;
+package ua.hotline.tests.seleniumTests.LoginUser;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import ua.hotline.pages.MainPage;
-import ua.hotline.tests.BaseTest;
-import ua.hotline.tests.DriverProperties;
+import ua.hotline.tests.api.components.pages.HomePage;
+import ua.hotline.tests.seleniumTests.BaseTest;
+import ua.hotline.tests.seleniumTests.DriverProperties;
 
 public class LoginUser extends BaseTest {
 
@@ -19,19 +19,17 @@ public class LoginUser extends BaseTest {
     }
 
     @Test
-    void verifyLoginButtonOnMainPage() throws InterruptedException {
+    void verifyLoginButtonOnMainPage() {
         DriverProperties properties = DriverProperties.getInstance();
         String baseUrl = properties.getScheme() + properties.getHost();
-        MainPage mainPage = new MainPage (driver, baseUrl);
-        mainPage.open()
+        HomePage homePage = new HomePage(driver, baseUrl);
+        homePage.open()
                 .getHeaderButtonsSection()
-                .getLoginAreaButton()
-                .clickOnLoginAreaButton();
-
-
-
+                .getLoginAreaButton().clickOnLoginAreaButton("https://hotline.ua/login/");
     }
 
+    @Test
+    void verifyElementsOnLoginPage() {
 
-
+    }
 }

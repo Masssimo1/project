@@ -4,7 +4,7 @@
 <suite name="Smoke Test Suite" >
     <test name="Login test">
         <classes>
-            <class name="ua.hotline.tests.LoginUser.LoginUser"/>
+            <class name="ua.hotline.tests.seleniumTests.LoginUser.LoginUser"/>
         </classes>
     </test>
 </suite>

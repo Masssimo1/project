@@ -1,4 +1,4 @@
-package ua.hotline.tests.driver;
+package ua.hotline.tests.seleniumTests.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.MutableCapabilities;

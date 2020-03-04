@@ -1,11 +1,11 @@
-package ua.hotline.buttons;
+package ua.hotline.tests.api.components.buttons;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import ua.hotline.Clickable;
-import ua.hotline.Visible;
+import ua.hotline.tests.api.components.Clickable;
+import ua.hotline.tests.api.components.Visible;
 @Slf4j
 public class Button implements Visible, Clickable {
     private WebDriver driver;
@@ -35,5 +35,10 @@ public class Button implements Visible, Clickable {
     public WebElement clickOnButton() {
          this.driver.findElement(sectionSelector).click();
         return null;
+    }
+
+    @Override
+    public WebElement getRootElement() {
+        return this.driver.findElement(sectionSelector);
     }
 }

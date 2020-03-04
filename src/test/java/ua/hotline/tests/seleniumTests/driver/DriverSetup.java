@@ -1,4 +1,4 @@
-package ua.hotline.tests.driver;
+package ua.hotline.tests.seleniumTests.driver;
 
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;

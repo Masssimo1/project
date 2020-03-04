@@ -1,4 +1,4 @@
-package ua.hotline.tests.driver;
+package ua.hotline.tests.seleniumTests.driver;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.MutableCapabilities;
@@ -6,12 +6,12 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import ua.hotline.tests.DriverProperties;
+import ua.hotline.tests.seleniumTests.DriverProperties;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static ua.hotline.tests.driver.DriverType.FIREFOX;
+import static ua.hotline.tests.seleniumTests.driver.DriverType.FIREFOX;
 
 /**
  * Class that instantiates an actual driver

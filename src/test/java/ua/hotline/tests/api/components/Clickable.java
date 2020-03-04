@@ -1,4 +1,4 @@
-package ua.hotline;
+package ua.hotline.tests.api.components;
 
 import org.openqa.selenium.WebElement;
 

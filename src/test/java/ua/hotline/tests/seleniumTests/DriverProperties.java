@@ -1,4 +1,4 @@
-package ua.hotline.tests;
+package ua.hotline.tests.seleniumTests;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

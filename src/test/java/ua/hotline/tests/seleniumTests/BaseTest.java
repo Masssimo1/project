@@ -1,4 +1,4 @@
-package ua.hotline.tests;
+package ua.hotline.tests.seleniumTests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import ua.hotline.tests.driver.WebDriverThread;
+import ua.hotline.tests.seleniumTests.driver.WebDriverThread;
 
 
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class BaseTest {
         log.info("In TestService BeforeClass");
     }
 
-    protected static WebDriver getDriver() {
+    public static WebDriver getDriver() {
         log.info("Requesting driver");
         return driverThread.get().getDriver();
     }
