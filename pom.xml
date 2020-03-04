@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ua.hotline</groupId>
+    <artifactId>maksym-parafilenko-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <lombok.version>1.18.10</lombok.version>
+        <log4j.version>2.13.0</log4j.version>
+        <selenium.version>3.141.59</selenium.version>
+        <testNG.version>7.1.0</testNG.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <compile.source.version>11</compile.source.version>
+        <compile.target.version>11</compile.target.version>
+        <assertj.version>3.15.0</assertj.version>
+        <webdrivermanager.version>3.8.1</webdrivermanager.version>
+        <browserName>CHROME</browserName>
+        <default.suiteXmlFile>src/test/resources/defaultSuite.xml</default.suiteXmlFile>
+        <surfire.version>3.0.0-M4</surfire.version>
+
+    </properties>
+
+    <dependencies>
+        <!-- Fluent assertions library -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+        </dependency>
+        <!--S-->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <!--T-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testNG.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--L-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <!--W-->
+        <!--Automated drivers check and uploading (no binaries keeping within the project)-->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${compile.source.version}</source>
+                    <target>${compile.target.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>tests</id>
+            <build>
+                <plugins>
+                    <!--Runs integration/system tests safely (no abortion) and parallels them-->
+                    <!--Runs integration/system tests safely (no abortion) and parallels them-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M4</version>
+                        <configuration>
+                            <!--<parallel>methods</parallel>-->
+                            <!--Define number of threads: <mvn clean install -Dthreads=2>-->
+                            <testFailureIgnore>false</testFailureIgnore>
+                            <!--<threadCount>${threads}</threadCount>-->
+                            <!--<forkCount>${forks}</forkCount>-->
+<!--                            <argLine>-->
+<!--                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
+<!--                            </argLine>-->
+                            <suiteXmlFiles>
+                                <suiteXmlFile>${default.suiteXmlFile}</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <systemPropertyVariables>
+                                <screenshotDirectory>${project.build.directory}/screenshot</screenshotDirectory>
+                                <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                                <browser>${browserName}</browser>
+                                <!--<desiredBrowserVersion>${browser.version}</desiredBrowserVersion>
+                                <desiredPlatform>${platform}</desiredPlatform>
+                                <remoteDriver>${remote}</remoteDriver>
+                                <selenoidURL>${selenoidURL}</selenoidURL>-->
+                            </systemPropertyVariables>
+                            <!--<includes>
+                                <include>**/*Test.java</include>
+                            </includes>-->
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="Smoke Test Suite" >
+    <test name="Login test">
+        <classes>
+            <class name="ua.hotline.tests.LoginUser.LoginUser"/>
+        </classes>
+    </test>
+</suite>
