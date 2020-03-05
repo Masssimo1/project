@@ -12,15 +12,6 @@ import ua.hotline.tests.seleniumTests.DriverProperties;
 @Issue("EZ-2658")
 public class HomePageStructure extends BaseTest {
 
-        private WebDriver driver;
-
-        @BeforeClass
-        public void setUpClass() {
-            System.out.println("In Before class");
-            this.driver = getDriver();
-        }
-
-
         @Test (description = "All sections are displayed on the Home Page")
         @Description("Check that all sections are displayed on the Home page")
         @Severity(SeverityLevel.BLOCKER)
@@ -28,7 +19,7 @@ public class HomePageStructure extends BaseTest {
         void verifyHomePageSections(){
             DriverProperties properties = DriverProperties.getInstance();
             String baseUrl = properties.getScheme() + properties.getHost();
-            HomePage homePage = new HomePage(driver, baseUrl);
+            HomePage homePage = new HomePage(baseUrl);
             homePage.open().getHeaderButtonsSection().elementIsVisible();
             homePage.open().getHeaderLanguageAndCitySection().elementIsVisible();
             homePage.open().getSearchBoxSection().elementIsVisible();

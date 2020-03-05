@@ -35,7 +35,7 @@ public class BaseTest {
             webDriverThreadPool.add(webDriverThread);
             return webDriverThread;
         });
-        long timeout = 6L;
+        long timeout = 1L;
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
@@ -44,7 +44,6 @@ public class BaseTest {
     protected void setUp() {
         log.info("In TestService BeforeClass");
     }
-
     public static WebDriver getDriver() {
         log.info("Requesting driver");
         return driverThread.get().getDriver();

@@ -6,24 +6,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ua.hotline.tests.api.components.Clickable;
 import ua.hotline.tests.api.components.Visible;
+
+import static ua.hotline.tests.api.utils.CustomSeleniumActions.doFindElement;
+
 @Slf4j
 public class Button implements Visible, Clickable {
-    private WebDriver driver;
     private final By sectionSelector;
 
-    public Button (WebDriver driver, By parentSelector){
-        this.driver = driver;
+    public Button ( By parentSelector){
         this.sectionSelector = parentSelector;
     }
 
     @Override
     public boolean elementIsVisible() {
-        return this.driver.findElement(sectionSelector).isDisplayed();
+        return doFindElement(sectionSelector).isDisplayed();
     }
 
     @Override
     public boolean elementIsNotVisible() {
-        if (this.driver.findElement(sectionSelector).isDisplayed()) {
+        if (doFindElement(sectionSelector).isDisplayed()) {
             log.info("Button is displayed");
         return false;
         } else {
@@ -33,12 +34,12 @@ public class Button implements Visible, Clickable {
 
     @Override
     public WebElement clickOnButton() {
-         this.driver.findElement(sectionSelector).click();
+         doFindElement(sectionSelector).click();
         return null;
     }
 
     @Override
     public WebElement getRootElement() {
-        return this.driver.findElement(sectionSelector);
+        return doFindElement(sectionSelector);
     }
 }

@@ -2,34 +2,33 @@ package ua.hotline.tests.api.components.pages;
 
 import org.openqa.selenium.WebDriver;
 import ua.hotline.tests.api.components.sections.*;
+import ua.hotline.tests.seleniumTests.BaseTest;
 
 
 public class HomePage {
 
-    private WebDriver driver;
     private String url;
 
-    public HomePage(WebDriver driver, String baseUrl){
-        this.driver = driver;
+    public HomePage(String baseUrl){
         this.url = baseUrl;
 
     }
 
     public HomePage open() {
-        this.driver.get(this.url);
+        BaseTest.getDriver().get(this.url);
         return this;
     }
 
     public HeaderButtonsSection getHeaderButtonsSection() {
-        return new HeaderButtonsSection (this.driver);
+        return new HeaderButtonsSection ();
     }
 
     public HeaderLanguageAndCitySection getHeaderLanguageAndCitySection() {
-        return new HeaderLanguageAndCitySection(this.driver);
+        return new HeaderLanguageAndCitySection();
     }
 
     public SearchBoxSection getSearchBoxSection() {
-        return new SearchBoxSection(this.driver);
+        return new SearchBoxSection();
     }
 
     public DropdownMenuSection getDropdownMenuSection () {

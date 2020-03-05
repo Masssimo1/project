@@ -6,17 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ua.hotline.tests.api.components.Section;
 
+import static ua.hotline.tests.api.utils.CustomSeleniumActions.doFindElement;
+
 @Slf4j
 public class SearchBoxSection implements Section {
     private final By parentSelector = By.id("searchbox");
-    private WebDriver driver;
-
-    public SearchBoxSection(WebDriver driver) {
-        this.driver = driver ;
-    }
 
     @Override
     public WebElement getRootElement() {
-        return this.driver.findElement(parentSelector);
+        return doFindElement(parentSelector);
     }
 }
