@@ -5,11 +5,7 @@
     <test name="Home Page Structure">
         <classes>
             <class name="ua.hotline.tests.seleniumTests.HomePageStructure.HomePageStructure"/>
-        </classes>
-    </test>
-    <test name="Login test">
-        <classes>
-            <class name="ua.hotline.tests.seleniumTests.HomePageStructure.HomePageStructure"></class>
+            <class name="ua.hotline.tests.seleniumTests.LoginUser.LoginUser"/>
         </classes>
     </test>
 </suite>
