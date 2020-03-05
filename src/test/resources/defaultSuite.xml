@@ -3,10 +3,10 @@
 
 <suite name="Smoke Test Suite" >
     <test name="Home Page Structure">
-        <classes>
-            <class name="ua.hotline.tests.seleniumTests.HomePageStructure.HomePageStructure"/>
-            <class name="ua.hotline.tests.seleniumTests.LoginUser.LoginUser"/>
-        </classes>
+        <packages>
+            <package name="ua.hotline.tests.seleniumTests.HomePageStructure"/>
+            <package name="ua.hotline.tests.seleniumTests.LoginUser"/>
+        </packages>
     </test>
 </suite>
 

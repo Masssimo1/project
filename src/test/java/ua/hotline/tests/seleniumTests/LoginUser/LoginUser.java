@@ -16,7 +16,6 @@ public class LoginUser extends BaseTest {
     @Test (description = "Open the Login page")
     @Issue("EZ-8885")
     @Description ("")
-    @Attachment
     void verifyLoginButtonOnMainPage() {
         DriverProperties properties = DriverProperties.getInstance();
         String baseUrl = properties.getScheme() + properties.getHost();
