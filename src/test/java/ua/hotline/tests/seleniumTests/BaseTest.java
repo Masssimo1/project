@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-@Listeners(ScreenshotListener.class)
+@Listeners(AttachmentsListener.class)
 public class BaseTest {
     // A list to store all instances of WebDriverThread
     // A thread won't be able to modify the list while another thread is currently running a method from this list.
@@ -53,6 +53,7 @@ public class BaseTest {
     public static void clearCookies() {
         getDriver().manage().deleteAllCookies();
     }
+
 
     @AfterSuite
     public static void closeDriverObjects() {

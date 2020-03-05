@@ -3,6 +3,7 @@ package ua.hotline.tests.api.components.pages;
 import org.openqa.selenium.WebDriver;
 import ua.hotline.tests.api.components.sections.*;
 import ua.hotline.tests.seleniumTests.BaseTest;
+import ua.hotline.tests.seleniumTests.DriverProperties;
 
 
 public class HomePage {
@@ -11,7 +12,6 @@ public class HomePage {
 
     public HomePage(String baseUrl){
         this.url = baseUrl;
-
     }
 
     public HomePage open() {
