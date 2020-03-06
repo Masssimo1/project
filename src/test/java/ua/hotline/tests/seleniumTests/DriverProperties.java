@@ -55,7 +55,7 @@ public class DriverProperties {
     private void setDefaultProperties() {
         properties.setProperty("test.scheme", "https://");
         properties.setProperty("test.homePageBaseUrl", "hotline.ua");
-        properties.setProperty("test.loginPageUrl", "hotline.ua/login");
+        properties.setProperty("test.loginPageUrl", "/login");
     }
 
     /**
@@ -68,7 +68,6 @@ public class DriverProperties {
     public String getHomePageBaseUrl() {
         return properties.getProperty("test.homePageBaseUrl");
     }
-
 
     public String getLoginPageBaseUrl() {
         return properties.getProperty("test.loginPageUrl");

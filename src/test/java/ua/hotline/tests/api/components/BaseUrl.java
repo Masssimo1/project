@@ -13,7 +13,7 @@ public class BaseUrl extends BaseTest {
 
     public static String loginPageBaseUrl(){
         DriverProperties properties = DriverProperties.getInstance();
-        String baseUrl = properties.getScheme() + properties.getLoginPageBaseUrl();
+        String baseUrl = properties.getScheme() + properties.getHomePageBaseUrl() + properties.getLoginPageBaseUrl();
         return baseUrl;
     }
 }
