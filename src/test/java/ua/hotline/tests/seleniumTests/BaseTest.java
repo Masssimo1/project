@@ -6,9 +6,7 @@ import org.testng.annotations.*;
 import ua.hotline.tests.seleniumTests.driver.WebDriverThread;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -53,7 +51,6 @@ public class BaseTest {
     public static void clearCookies() {
         getDriver().manage().deleteAllCookies();
     }
-
 
     @AfterSuite
     public static void closeDriverObjects() {

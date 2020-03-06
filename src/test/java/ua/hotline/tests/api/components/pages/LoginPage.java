@@ -1,11 +1,9 @@
 package ua.hotline.tests.api.components.pages;
 
-import lombok.extern.java.Log;
 import org.openqa.selenium.By;
 import ua.hotline.tests.api.components.buttons.Button;
 import ua.hotline.tests.seleniumTests.BaseTest;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static ua.hotline.tests.api.utils.CustomSeleniumActions.doFindElement;
 import static ua.hotline.tests.api.utils.CustomSeleniumActions.doSendKeys;
 
