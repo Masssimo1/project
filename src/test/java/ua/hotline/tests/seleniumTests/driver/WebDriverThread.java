@@ -11,6 +11,7 @@ import ua.hotline.tests.seleniumTests.DriverProperties;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static ua.hotline.tests.seleniumTests.driver.DriverType.CHROME;
 import static ua.hotline.tests.seleniumTests.driver.DriverType.FIREFOX;
 
 /**
@@ -22,7 +23,7 @@ public class WebDriverThread {
     private WebDriver webDriver;
     private DriverType selectedDriverType;
 
-    private final DriverType defaultDriverType = FIREFOX;
+    private final DriverType defaultDriverType = CHROME;
     private final String browser = System.getProperty("browser");
     private static final String operatingSystem = System.getProperty("os.name").toUpperCase();
     private final String systemArchitecture = System.getProperty("os.arch");

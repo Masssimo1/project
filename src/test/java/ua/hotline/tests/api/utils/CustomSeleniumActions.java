@@ -8,13 +8,15 @@ import ua.hotline.tests.seleniumTests.BaseTest;
 
 @UtilityClass
 public class CustomSeleniumActions {
+
     private WebDriver driver = BaseTest.getDriver();
 
     public static WebElement doFindElement(By selector) {
         return driver.findElement(selector);
     }
 
-    private static WebDriver driver() {
-        return driver;
+    public static void doSendKeys(By selector, String text) {
+        driver.findElement(selector).clear();
+        driver.findElement(selector).sendKeys(text);
     }
 }

@@ -18,8 +18,6 @@ public class LoginAreaButton extends Button{
 
     public LoginAreaButton clickOnLoginAreaButton(String url){
         doFindElement(buttonSelector).click();
-//        WebDriverWait explicitWait = new WebDriverWait(BaseTest.getDriver(),10);
-//        explicitWait.until(ExpectedConditions.urlContains("login"));
         String loginPageURL = CurrentPageURL.getCurrentUrl();
         assertThat(loginPageURL).isEqualTo(url);
         return this;

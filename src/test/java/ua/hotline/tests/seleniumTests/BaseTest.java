@@ -35,7 +35,7 @@ public class BaseTest {
             webDriverThreadPool.add(webDriverThread);
             return webDriverThread;
         });
-        long timeout = 1L;
+        long timeout = 8L;
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
