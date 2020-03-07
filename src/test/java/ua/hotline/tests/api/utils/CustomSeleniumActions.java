@@ -19,4 +19,9 @@ public class CustomSeleniumActions {
         driver.findElement(selector).clear();
         driver.findElement(selector).sendKeys(text);
     }
+
+    public static boolean getBrowserConsoleErrors(){
+        boolean errorBrowserConsole = getBrowserConsoleErrors.isThereJSErrorOnThePage();
+        return errorBrowserConsole;
+    }
 }

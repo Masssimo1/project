@@ -1,12 +1,15 @@
 package ua.hotline.tests.api.components.pages;
 
-import org.openqa.selenium.WebDriver;
+import lombok.extern.slf4j.Slf4j;
 import ua.hotline.tests.api.components.sections.*;
 import ua.hotline.tests.seleniumTests.BaseTest;
-import ua.hotline.tests.seleniumTests.DriverProperties;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-public class HomePage {
+@Slf4j
+public class HomePage{
 
     private String url;
 
@@ -39,6 +42,28 @@ public class HomePage {
         return new DataMenuSection();
     }
 
+//    @Override
+//    public boolean isThereJSErrorOnThePage(){
+//            Set<String> errorStrings = new HashSet<>();
+//            errorStrings.add("Error");
+//            errorStrings.add("Unchecked runtime");
+//            errorStrings.add("Could not");
+//            errorStrings.add("associated");
+//            LogEntries logEntries = BaseTest.getDriver().manage().logs().get(LogType.BROWSER);
+//            for (LogEntry logEntry : logEntries) {
+//                for (String errorString : errorStrings) {
+//                    if (logEntry.getMessage().contains(errorString)) {
+//                        log.error("Java Script error has been detected:");
+//                        log.error(new Date(logEntry.getTimestamp()) + " " + logEntry.getLevel() + " " + logEntry.getMessage());
+//                        return true;
+//                    }
+//                }
+//            }
+//            return false;
+//        }
+    }
+
+
 
 //    public Button getLoginButton() {
 //        return new Button(this.driver,this.parentSelector)
@@ -46,4 +71,3 @@ public class HomePage {
 //
 //    }
 
-}

@@ -1,5 +1,6 @@
 package ua.hotline.tests.api.components.pages;
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import ua.hotline.tests.api.components.buttons.Button;
 import ua.hotline.tests.seleniumTests.BaseTest;
@@ -7,6 +8,7 @@ import ua.hotline.tests.seleniumTests.BaseTest;
 import static ua.hotline.tests.api.utils.CustomSeleniumActions.doFindElement;
 import static ua.hotline.tests.api.utils.CustomSeleniumActions.doSendKeys;
 
+@Slf4j
 public class LoginPage {
     private String url;
     private static final By ENTER_BUTTON = By.className("btn-graphite");
@@ -53,7 +55,7 @@ public class LoginPage {
     }
 
     public static boolean getButtonsStatus() {
-        return  (getEnterButton().elementIsVisible())&& (getFacebookBotton().elementIsVisible()) && (getGoogleBookBotton().elementIsVisible());
+        return (getEnterButton().elementIsVisible()) && (getFacebookBotton().elementIsVisible()) && (getGoogleBookBotton().elementIsVisible());
     }
 
 
@@ -68,9 +70,28 @@ public class LoginPage {
     public static Button getGoogleBookBotton() {
         return new Button(GOOGLE_BUTTON);
     }
-
-
-
 }
+
+
+//    @Override
+//    public boolean isThereJSErrorOnThePage(){
+//            Set<String> errorStrings = new HashSet<>();
+//            errorStrings.add("Error");
+//            errorStrings.add("Unchecked runtime");
+//            errorStrings.add("Could not");
+//            LogEntries logEntries = BaseTest.getDriver().manage().logs().get(LogType.BROWSER);
+//            for (LogEntry logEntry : logEntries) {
+//                for (String errorString : errorStrings) {
+//                    if (logEntry.getMessage().contains(errorString)) {
+//                        log.error("Java Script error has been detected:");
+//                        log.error(new Date(logEntry.getTimestamp()) + " " + logEntry.getLevel() + " " + logEntry.getMessage());
+//                        return true;
+//                    }
+//                }
+//            }
+//            return false;
+//        }
+//    }
+
 
 
