@@ -10,7 +10,7 @@
 
     <properties>
         <lombok.version>1.18.10</lombok.version>
-        <log4j.version>2.13.0</log4j.version>
+        <log4j.version>2.15.0</log4j.version>
         <selenium.version>3.141.59</selenium.version>
         <testNG.version>7.1.0</testNG.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
